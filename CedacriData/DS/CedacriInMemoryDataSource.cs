@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace CedacriData.DS
 {
-    public class CedacriDataSource
+    public class CedacriInMemoryDataSource : ICedacriDataSource
     {
         public List<Client> GetAllClients()
         {

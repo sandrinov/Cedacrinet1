@@ -17,10 +17,16 @@ namespace NuovoSportello
     /// </summary>
     public partial class MainForm : Form
     {
+        ICedacriDataSource ds;
         public MainForm()
         {
             InitializeComponent();
-            CedacriDataSource ds = new CedacriDataSource();
+
+            //CedacriInMemoryDataSource ds = new CedacriInMemoryDataSource();
+            //CedacriWebServiceDataSource ds = new CedacriWebServiceDataSource();
+
+            ds = new CedacriWebServiceDataSource();
+
             List<Client> clientList = ds.GetAllClients();
             foreach (Client cli in clientList)
             {
