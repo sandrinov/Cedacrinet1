@@ -9,5 +9,8 @@ namespace CedacriData.DS
     public interface ICedacriDataSource
     {
         List<Models.Client> GetAllClients();
+        Models.Client GetClientByID(int IDClient);
+        Models.Client GetClientByClientName(String firstName, String lastName);
+
     }
 }

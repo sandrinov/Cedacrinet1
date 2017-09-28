@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Services;
 
@@ -20,6 +21,7 @@ namespace BankServices
         [WebMethod]
         public List<BankClient> GetAllClients()
         {
+            Thread.Sleep(5000);
             List<BankClient> resultList = new List<BankClient>() {
                 new BankClient(){ ClientID=1, ClientName="Norma,W. Castillo" },
                 new BankClient(){ ClientID=2, ClientName="Amanda,R. Anderson" },

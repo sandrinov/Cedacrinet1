@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CedacriData.Models;
 
 namespace CedacriData.DS
 {
@@ -29,6 +30,16 @@ namespace CedacriData.DS
                 resultList.Add(client);
             }
             return resultList;
+        }
+
+        public Client GetClientByClientName(string firstName, string lastName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Client GetClientByID(int IDClient)
+        {
+            throw new NotImplementedException();
         }
     }
 }

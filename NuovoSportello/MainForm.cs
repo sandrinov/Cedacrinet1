@@ -25,13 +25,22 @@ namespace NuovoSportello
             //CedacriInMemoryDataSource ds = new CedacriInMemoryDataSource();
             //CedacriWebServiceDataSource ds = new CedacriWebServiceDataSource();
 
-            ds = new CedacriWebServiceDataSource();
+            ds = new CedacriInMemoryDataSource();
 
             List<Client> clientList = ds.GetAllClients();
             foreach (Client cli in clientList)
             {
                 this.listBox1.Items.Add(cli.FirstName + " " + cli.LastName);
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String item = listBox1.SelectedItem.ToString();
+            String[] clientName = item.Split(new char[] { ' ' });
+            Client cli = ds.GetClientByClientName(clientName[0], clientName[1]);
+
+            MessageBox.Show("CLient ID:" + cli.IDClient);
         }
     }
 }
