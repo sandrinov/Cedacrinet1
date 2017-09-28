@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuovoSportello", "NuovoSpor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CedacriData", "CedacriData\CedacriData.csproj", "{C9FFA9DA-487F-4EA8-AA6B-A68FD4BD1F18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankServices", "BankServices\BankServices.csproj", "{A618AF74-5BC7-4CCB-A4B0-34DD7747ECA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C9FFA9DA-487F-4EA8-AA6B-A68FD4BD1F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9FFA9DA-487F-4EA8-AA6B-A68FD4BD1F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9FFA9DA-487F-4EA8-AA6B-A68FD4BD1F18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A618AF74-5BC7-4CCB-A4B0-34DD7747ECA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A618AF74-5BC7-4CCB-A4B0-34DD7747ECA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A618AF74-5BC7-4CCB-A4B0-34DD7747ECA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A618AF74-5BC7-4CCB-A4B0-34DD7747ECA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
