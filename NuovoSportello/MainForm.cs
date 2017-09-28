@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace NuovoSportello
 {
+    /// <summary>
+    /// Main Form
+    /// </summary>
     public partial class MainForm : Form
     {
         public MainForm()
