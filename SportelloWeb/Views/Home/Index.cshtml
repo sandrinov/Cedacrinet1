@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CedacriData.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nuovo Sportello </h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var cli in Model)
+                {
+                    <tr>
+                        <td><a href="/Home/Detail/@cli.IDClient">Detail</a></td>
+                        <td>@cli.FirstName</td>
+                        <td>@cli.LastName</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+</div>

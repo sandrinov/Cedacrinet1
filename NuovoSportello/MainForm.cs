@@ -40,7 +40,10 @@ namespace NuovoSportello
             String[] clientName = item.Split(new char[] { ' ' });
             Client cli = ds.GetClientByClientName(clientName[0], clientName[1]);
 
-            MessageBox.Show("CLient ID:" + cli.IDClient);
+            txt_IDClient.Text = cli.IDClient.ToString();
+            txt_FirstName.Text = cli.FirstName;
+            txt_LastName.Text = cli.LastName;
+            
         }
     }
 }
