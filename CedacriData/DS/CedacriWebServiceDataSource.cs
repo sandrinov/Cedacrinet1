@@ -14,6 +14,12 @@ namespace CedacriData.DS
         {
             proxy = new Bank.services.HRService();
         }
+
+        public void Deposit(int IDConto, double import)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Models.Client> GetAllClients()
         {
             List<Models.Client> resultList = new List<Models.Client>();
@@ -38,6 +44,16 @@ namespace CedacriData.DS
         }
 
         public Client GetClientByID(int IDClient)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ContoCorrente GetContoByID(int IDConto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Withdraw(int IDConto, double import)
         {
             throw new NotImplementedException();
         }

@@ -1,0 +1,42 @@
+﻿[
+  {
+    "IDClient": 1,
+    "FirstName": "Mario",
+    "LastName": "Rossi",
+    "Conto": {
+      "ID": 99,
+      "Numconto": "CXSMU883WKID",
+      "Balance": 0
+    }
+  },
+  {
+    "IDClient": 2,
+    "FirstName": "Maria",
+    "LastName": "Verdi",
+    "Conto": {
+      "ID": 8,
+      "Numconto": "IQNFC08LDIM4",
+      "Balance": 0
+    }
+  },
+  {
+    "IDClient": 3,
+    "FirstName": "Mariotto",
+    "LastName": "Bianchi",
+    "Conto": {
+      "ID": 61,
+      "Numconto": "TFUV7GRPQ9ES",
+      "Balance": 0
+    }
+  },
+  {
+    "IDClient": 4,
+    "FirstName": "Mariolina",
+    "LastName": "Gialli",
+    "Conto": {
+      "ID": 77,
+      "Numconto": "TFUAAGRPQ44X",
+      "Balance": 0
+    }
+  }
+]

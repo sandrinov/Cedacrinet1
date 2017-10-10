@@ -23,9 +23,18 @@ namespace SportelloWeb.Controllers
         }
 
         //GET /Home/Detail/id
+        [HttpGet]
         public ActionResult Detail(int id)
         {
             return View(ds.GetClientByID(id));
         }
+        [HttpPost]
+        public ActionResult Detail(int id, string import)
+        {
+            CedacriData.Models.Client cli = ds.GetClientByID(id);
+            ds.Deposit(cli.IDClient, Double.Parse(import));
+            return View(cli);
+        }
+
     }
 }

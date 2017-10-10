@@ -20,6 +20,13 @@ namespace CedacriData.DS
             lst.Add(c3);
             lst.Add(c4);
         }
+
+        public void Deposit(int IDClient, double import)
+        {
+            Client cli = GetClientByID(IDClient);
+            cli.Conto.Balance += import;
+        }
+
         public List<Client> GetAllClients()
         {
             return lst;
@@ -47,6 +54,22 @@ namespace CedacriData.DS
 
             //LINQ to Object
             return lst.Where(c => c.IDClient == IDClient).FirstOrDefault();
+        }
+
+        public ContoCorrente GetContoByID(int IDConto)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Withdraw(int IDClient, double import)
+        {
+            bool result = true;
+            Client cli = GetClientByID(IDClient);
+            if (cli.Conto.Balance > import)
+                cli.Conto.Balance -= import;
+            else
+                result = false;
+            return result;
         }
     }
 }

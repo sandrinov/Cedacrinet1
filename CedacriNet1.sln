@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankServices", "BankService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportelloWeb", "SportelloWeb\SportelloWeb.csproj", "{15E02E45-629E-456C-9CD6-FBEC5EE33FDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CedacriAPIService", "CedacriAPIService\CedacriAPIService.csproj", "{B39DD169-D74B-4B4C-98FC-C62661D2799D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{15E02E45-629E-456C-9CD6-FBEC5EE33FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15E02E45-629E-456C-9CD6-FBEC5EE33FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15E02E45-629E-456C-9CD6-FBEC5EE33FDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39DD169-D74B-4B4C-98FC-C62661D2799D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39DD169-D74B-4B4C-98FC-C62661D2799D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39DD169-D74B-4B4C-98FC-C62661D2799D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39DD169-D74B-4B4C-98FC-C62661D2799D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
