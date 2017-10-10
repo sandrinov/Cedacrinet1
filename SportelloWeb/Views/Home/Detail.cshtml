@@ -43,8 +43,13 @@
             {
                 <h3> Conto Corrente @Model.Conto.Numconto - Balance: @Model.Conto.Balance</h3>
                 <form method="post">
-                    Import <input type="text" name="import" />
-                    <input type="submit" value="Deposita" /> <hr />
+                    Importo <input type="text" name="Importo" /> <hr />
+                    Segno <select name="Segno">
+                            <option value="+"> + </option>
+                            <option value="-"> - </option>
+                          </select>
+
+                    <input type="submit" value="Esegui" /> <hr />
                 </form>
             }
             else

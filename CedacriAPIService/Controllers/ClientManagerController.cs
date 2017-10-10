@@ -53,7 +53,7 @@ namespace CedacriAPIService.Controllers
             Persist();
             return Ok(cli);
         }
-
+        [HttpGet]
         [Route("api/deposit", Name = "Deposit")]
         public IHttpActionResult Deposit(int id, double import)
         {
@@ -62,7 +62,7 @@ namespace CedacriAPIService.Controllers
             Persist();
             return Ok(cli);
         }
-
+        [HttpGet]
         [Route("api/withdraw", Name = "Withdraw")]
         public IHttpActionResult Withdraw(int id, double import)
         {

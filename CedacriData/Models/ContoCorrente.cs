@@ -13,8 +13,8 @@ namespace CedacriData.Models
         {
             rnd = new Random(DateTime.Now.Millisecond);
             this.ID = rnd.Next(100);
-            this.Numconto = RandomString(12);
-            this.Balance = 0;
+            //this.Numconto = RandomString(12);
+            //this.Balance = 0;
         }
         public int ID { get; set; }
         public String Numconto { get; set; }
