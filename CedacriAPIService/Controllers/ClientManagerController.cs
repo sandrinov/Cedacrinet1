@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web.Hosting;
 using System.Web.Http;
 
 namespace CedacriAPIService.Controllers
@@ -41,6 +42,40 @@ namespace CedacriAPIService.Controllers
         {
             Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
             return Ok(cli);
+        }
+
+        [Route("api/createaccount", Name = "CreateAccount")]
+        [HttpPost]
+        public IHttpActionResult CreateAccount(int id, ContoCorrente account)
+        {
+            Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
+            cli.Conto = account;
+            Persist();
+            return Ok(cli);
+        }
+
+        [Route("api/deposit", Name = "Deposit")]
+        public IHttpActionResult Deposit(int id, double import)
+        {
+            Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
+            cli.Conto.Balance += import;
+            Persist();
+            return Ok(cli);
+        }
+
+        [Route("api/withdraw", Name = "Withdraw")]
+        public IHttpActionResult Withdraw(int id, double import)
+        {
+            Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
+            cli.Conto.Balance -= import;
+            Persist();
+            return Ok(cli);
+        }
+
+        private void Persist()
+        {
+            File.WriteAllText(HostingEnvironment.MapPath(@"~/Data/clients.json"),
+                JsonConvert.SerializeObject(lst));
         }
     }
 }

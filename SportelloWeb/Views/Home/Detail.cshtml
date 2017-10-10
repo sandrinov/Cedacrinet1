@@ -39,12 +39,29 @@
             </dl>
         </div>
         <div class="col-md-8">
-            <h3> Conto Corrente @Model.Conto.Numconto</h3>
-            <form method="post">
-                Import <input type="text" name="import"/>
-                <input type="submit" value="Deposita" /> <hr />
-            </form>
-            Balance: <input type="text" value="@Model.Conto.Balance" disabled/>
+            @if (Model.Conto != null)
+            {
+                <h3> Conto Corrente @Model.Conto.Numconto - Balance: @Model.Conto.Balance</h3>
+                <form method="post">
+                    Import <input type="text" name="import" />
+                    <input type="submit" value="Deposita" /> <hr />
+                </form>
+            }
+            else
+            {
+                @Html.ActionLink("Create New Account Number", 
+               "OpenAccount", "Home", new { id = @Model.IDClient }, null)
+            } 
+
+
+
+
+
+
+
+            
+            
+            
 
 
         </div>
