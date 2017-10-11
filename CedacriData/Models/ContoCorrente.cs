@@ -12,6 +12,7 @@ namespace CedacriData.Models
         public ContoCorrente()
         {
             rnd = new Random(DateTime.Now.Millisecond);
+            Movimenti = new List<Movimento>();
             this.ID = rnd.Next(100);
             //this.Numconto = RandomString(12);
             //this.Balance = 0;
@@ -25,6 +26,7 @@ namespace CedacriData.Models
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[rnd.Next(s.Length)]).ToArray());
         }
+        public List<Movimento> Movimenti { get; set; }
     }
     
 }

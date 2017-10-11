@@ -69,7 +69,7 @@ namespace SportelloWeb.Controllers
             return View(model);
         }
         [HttpPost]
-        public async Task<ActionResult> Detail(int id, Movimento mov)
+        public async Task<ActionResult> Detail(int id, MovimentoViewModel mov)
         {
             //CedacriData.Models.Client cli = ds.GetClientByID(id);
             //ds.Deposit(cli.IDClient, Double.Parse(import));

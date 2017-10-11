@@ -10,8 +10,8 @@
     <h4>Client</h4>
     <hr />
     <div class="row">
-        <div class="col-md-4">
-            <dl class="dl-horizontal">
+        <div class="col-md-3">
+            <dl class="dl-vertical">
                 <dt>
                     @Html.DisplayNameFor(model => model.IDClient)
                 </dt>
@@ -36,12 +36,20 @@
                     @Html.DisplayFor(model => model.LastName)
                 </dd>
 
-            </dl>
+            </dl><br />
+
+            <button id="btn_movimenti" 
+                    type="button" 
+                    class="btn btn-warning">Movimenti</button>
+
+
+
         </div>
-        <div class="col-md-8">
+        <div class="col-md-4">
             @if (Model.Conto != null)
             {
-                <h3> Conto Corrente @Model.Conto.Numconto - Balance: @Model.Conto.Balance</h3>
+                <h3> Conto Corrente @Model.Conto.Numconto <hr /> 
+                     Balance: <span id="spn_balance">@Model.Conto.Balance</span></h3>
                 <form method="post">
                     Importo <input type="text" name="Importo" /> <hr />
                     Segno <select name="Segno">
@@ -57,19 +65,60 @@
                 @Html.ActionLink("Create New Account Number", 
                "OpenAccount", "Home", new { id = @Model.IDClient }, null)
             } 
-
-
-
-
-
-
-
-            
-            
-            
-
-
+        </div>
+        <div class="col-md-5">
+            <input type="hidden" id="hidden_id" value="@Model.IDClient" />
+            <h2>Movimenti</h2>
+            <table class="table table-striped" id="tbl_movimenti">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Importo</th>
+                        <th>Segno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
     </div> 
 </div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var balanceString = $('#spn_balance').text();
+        var balance = parseFloat(balanceString);
+        if (balance < 0)
+            $('#spn_balance').addClass('text-danger');
+        else
+            $('#spn_balance').addClass('text-success');
+
+        $('#btn_movimenti').on('click', function () {
+
+            var server_url = "http://localhost:6249/";
+            var idclient = $('#hidden_id').val();
+
+            $.ajax({
+                cache: false,
+                type: "GET",
+                url: server_url + 'api/movimenti?id=' + idclient
+            }).done(function (movimenti) {
+
+                $.each(movimenti, function (i, movimento) {
+
+                    var tr = '<tr>';
+                    tr += '<td>' + movimento.DataMovimento + '</td>';
+                    tr += '<td>' + movimento.Importo + '</td>';
+                    tr += '<td>' + movimento.Segno + '</td>';
+                    tr += '</tr>';
+
+                    $('#tbl_movimenti tbody').append(tr);
+
+                });//end each
+            });// end done
+        });//end button click
+    });//end Jquery
+</script>
 

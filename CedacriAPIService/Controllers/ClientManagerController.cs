@@ -8,9 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Hosting;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace CedacriAPIService.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ClientManagerController : ApiController
     {
         private List<Client> lst;
@@ -44,6 +46,13 @@ namespace CedacriAPIService.Controllers
             return Ok(cli);
         }
 
+        [Route("api/movimenti", Name = "GetAllMovimenti")]
+        public IHttpActionResult GetAllMovimenti(int id)
+        {
+            Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
+            return Ok(cli.Conto.Movimenti);
+        }
+
         [Route("api/createaccount", Name = "CreateAccount")]
         [HttpPost]
         public IHttpActionResult CreateAccount(int id, ContoCorrente account)
@@ -59,6 +68,13 @@ namespace CedacriAPIService.Controllers
         {
             Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
             cli.Conto.Balance += import;
+            Movimento m = new Movimento
+            {
+                DataMovimento = DateTime.Now,
+                Importo = import,
+                Segno ="+"
+            };
+            cli.Conto.Movimenti.Add(m);
             Persist();
             return Ok(cli);
         }
@@ -68,6 +84,13 @@ namespace CedacriAPIService.Controllers
         {
             Client cli = lst.Where(c => c.IDClient == id).FirstOrDefault();
             cli.Conto.Balance -= import;
+            Movimento m = new Movimento
+            {
+                DataMovimento = DateTime.Now,
+                Importo = import,
+                Segno = "-"
+            };
+            cli.Conto.Movimenti.Add(m);
             Persist();
             return Ok(cli);
         }
